@@ -1,0 +1,88 @@
+﻿<Window x:Class="Практика.Window11"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Практика"
+        mc:Ignorable="d"
+        Title="Недвижимость" Height="450" Width="930" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Image Source="/Resources/img/logo.png" Margin="10,10,802.2,366"/>
+        <Button Content="Профиль" Click="Button_Click" Margin="176,15,0,15"/>
+        <Button Content="Потребность" Click="Button_Click_1" Margin="299,15,0,0"/>
+        <Button Content="Предложение" Click="Button_Click_2" Margin="464,15,0,0"/>
+        <Button Content="Недвижимость" Click="Button_Click_3" Margin="638,15,0,0"/>
+        <Button Content="Сделка" Click="Button_Click_4" Margin="822,15,0,0"/>
+        <Button Content="Назад" Click="Button_Click_5" Margin="15,363,0,0"/>
+        <Button Content="Создать недвижимость" Click="Button_Click_6" Margin="128,337,0,0"/>
+        <Button Content="Редактировать/удалить недвижимость" Click="Button_Click_7" Margin="411,337,0,0"/>
+        <Line X1="930" Y1="65" X2="0" Y2="65" Stroke="Black"/>
+        <Label Content="Поиск" HorizontalAlignment="Left" Margin="198,89,0,0" VerticalAlignment="Top"/>
+        <Label Content="Информация" Margin="198,132,0,0"/>
+        <TextBox Height="143" Margin="198,175,0,0" Text="" Width="572" IsEnabled="False"/>
+        <TextBox Height="35" Margin="423,89,0,0" Text="" Width="347"/>
+    </Grid>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="#37474F"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Background" Value="#ECEFF1"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontFamily" Value="/Практика;component/Resources/font/#Roboto"/>
+            <Setter Property="Template">
+                <!-- Закругление -->
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="3" Background="#ECEFF1">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                            VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <!-- Наведение -->
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="3" Background="#CFD8DC">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Foreground" Value="#37474F"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontFamily" Value="/Практика;component/Resources/font/#Roboto"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <!-- Ввод данных -->
+            <Setter Property="TextAlignment" Value="Left"/>
+            <Setter Property="Foreground" Value="#37474F"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border CornerRadius="3" Background="#ECEFF1">
+                            <ScrollViewer x:Name="PART_ContentHost"
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+</Window>
